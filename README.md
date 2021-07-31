@@ -31,6 +31,6 @@ hdwwiz.exe
 <img width="292" alt="5" src="https://user-images.githubusercontent.com/1725068/127724941-02d319cf-bd92-4e9e-9159-edf597e81388.png">
 <img width="292" alt="6" src="https://user-images.githubusercontent.com/1725068/127724944-d400301c-00e6-4895-8ba5-7c811a365a73.png">
 
-**デバイスマネージャー**にSMJ USB Device (COM)**が追加されていればOKです。
+**デバイスマネージャー**にSMJ USB Device**が追加されるはずです。
 
 <img width="213" alt="7" src="https://user-images.githubusercontent.com/1725068/127725954-f722a44b-4e78-46a5-9b49-49f854df5dae.png">
