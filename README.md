@@ -6,7 +6,7 @@
 コマンドプロンプトを**管理者として実行**して下記のコマンドを入力します。
 
 ```
-cd {USBVendorClassDriverのパス}
+cd {USBVendorClassDriver/のパス}
 pnputil  /add-driver SMJUSBCOM.inf /install
 ````
 
