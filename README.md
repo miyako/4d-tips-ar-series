@@ -40,6 +40,7 @@ hdwwiz.exe
 * ドライバーの仮想COMポートが対応しているWin32 API
 
 [CreateFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilea)  
-[GetCommTimeouts](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setcommtimeouts)  
+[GetCommTimeouts](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcommtimeouts)  
+[SetCommTimeouts](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setcommtimeouts)  
 [WriteFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-writefile)  
 [ReadFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-readfile)  
