@@ -3,7 +3,9 @@
 
 ### ドライバーをインストールする
 
-[ARシリーズダウンロードサイト | 株式会社ムーブ](https://www.move-p.jp/support/ardl.html)から**USBドライバー**をダウンロードします。
+[ARシリーズダウンロードサイト | 株式会社ムーブ](https://www.move-p.jp/support/ardl.html)からスター精密株式会社の**USBドライバー**をダウンロードします。
+
+*　使用したバージョン: `5.0.0.0` April 19, 2019
 
 * USBドライバーを使用する理由
 
@@ -34,3 +36,10 @@ hdwwiz.exe
 **デバイスマネージャー**に**SMJ USB Device**が追加されるはずです。
 
 <img width="213" alt="7" src="https://user-images.githubusercontent.com/1725068/127725954-f722a44b-4e78-46a5-9b49-49f854df5dae.png">
+
+* ドライバーの仮想COMポートが対応しているWin32 API
+
+[CreateFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilea)  
+[GetCommTimeouts](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setcommtimeouts)  
+[WriteFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-writefile)  
+[ReadFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-readfile)  
