@@ -37,10 +37,10 @@ hdwwiz.exe
 
 <img width="213" alt="7" src="https://user-images.githubusercontent.com/1725068/127725954-f722a44b-4e78-46a5-9b49-49f854df5dae.png">
 
-* ドライバーの仮想COMポートが対応しているWin32 API
+デバイスを追加することにより，下記のWin32 APIをサポートする仮想COMポートが作られます。
 
-[CreateFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilew)  
-[GetCommTimeouts](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcommtimeouts)  
-[SetCommTimeouts](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setcommtimeouts)  
-[WriteFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-writefile)  
-[ReadFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-readfile)  
+* [CreateFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilew)  
+* [GetCommTimeouts](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcommtimeouts)  
+* [SetCommTimeouts](https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setcommtimeouts)  
+* [WriteFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-writefile)  
+* [ReadFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-readfile)  
