@@ -59,6 +59,6 @@ hdwwiz.exe
 1. `GetCommPorts`
 1. レジストリキー `HKEY_LOCAL_MACHINE\HARDWARE\DEVICEMAP\SERIALCOMM`
 
-いくつかのAPIは，実際に接続されていないデバイスの仮想ポートは返さないかもしれません。
+いくつかのAPIは，実際に接続されていないデバイスの仮想ポートを返さないので注意が必要です。
 
-`SetupDiGetClassDevs`にフラグ`DIGCF_PRESENT`を**渡さなければ**デバイスマネージャーに登録されているだけの仮想ポートの情報も取得することができます。インタフェース情報は，デバイス名（たとえば"SMJ USB Device"）ポート番号（たとえば`COM3*）を特定するために必要です。
+`SetupDiGetClassDevs`にフラグ`DIGCF_PRESENT`を**渡さなければ**デバイスマネージャーに登録されているだけの仮想ポートの情報も取得することができます。インタフェース情報は，デバイス名（たとえば"SMJ USB Device"）に対応するポート番号（たとえば"COM3"）を特定するために必要です。
