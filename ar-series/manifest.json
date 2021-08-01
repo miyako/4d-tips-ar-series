@@ -1,0 +1,11 @@
+{
+    "name": "SMJ",
+    "id": 20000,
+    "commands": [
+        {
+            "theme": "SMJ",
+            "syntax": "SMJ Request(&T;&O;&O;&J):J",
+            "threadSafe": true
+        }
+    ]
+}
