@@ -47,3 +47,18 @@ hdwwiz.exe
 
 ## 仮想COMポートのポート番号を特定する
 
+[仮想COMポートの情報を名称から検索する方法](https://stackoverflow.com/questions/1388871/how-do-i-get-a-list-of-available-serial-ports-in-win32)は少なくとも`9`あると言われています。
+
+1. `CreateFile`で`1`から`255`を総当たりする
+1. `QueryDosDevice`
+1. `GetDefaultCommConfig`で`1`から`255`を総当たりする
+1. `SetupDiGetClassDevs`
+1. `EnumPorts`
+1. `IWbemLocator`
+1. `ComDBGetCurrentPortUsage` 
+1. `GetCommPorts`
+1. レジストリキー `HKEY_LOCAL_MACHINE\HARDWARE\DEVICEMAP\SERIALCOMM`
+
+いくつかのAPIは，実際に接続されていないデバイスの仮想ポートは返さないかもしれません。
+
+`SetupDiGetClassDevs`にフラグ`DIGCF_PRESENT`を**渡さなければ**デバイスマネージャーに登録されているだけの仮想ポートの情報も取得することができます。インタフェース情報は，デバイス名（たとえば"SMJ USB Device"）ポート番号（たとえば`COM3*）を特定するために必要です。
