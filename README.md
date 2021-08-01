@@ -1,7 +1,7 @@
 # 4d-tips-ar-series
 株式会社ムーブ社製AR100およびAR200を制御するには
 
-### ドライバーをインストールする
+## ドライバーをインストールする
 
 * [ARシリーズダウンロードサイト | 株式会社ムーブ](https://www.move-p.jp/support/ardl.html)からスター精密株式会社の**USBドライバー**をダウンロードします。
 
@@ -18,7 +18,7 @@ cd {USBVendorClassDriver/のパス}
 pnputil  /add-driver SMJUSBCOM.inf /install
 ````
 
-### 実機（プラグイン＆プレイ）なしで新しいデバイスを追加する
+## 実機（プラグイン＆プレイ）なしで新しいデバイスを追加する
 
 * コマンドプロンプトを**管理者として実行**して下記のコマンドを入力します。
 
@@ -45,5 +45,5 @@ hdwwiz.exe
 * [WriteFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-writefile)  
 * [ReadFile](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-readfile)  
 
-#### 仮想COMポートのポート番号を特定する
+## 仮想COMポートのポート番号を特定する
 
