@@ -1,76 +1,4 @@
 ﻿{
-	"Sources/Methods/generate_project_xcode.4dm": {
-		"startSelection": 0,
-		"endSelection": 0,
-		"firstSelectedLine": 21,
-		"lastSelectedLine": 21,
-		"folding": [],
-		"bookmarks": [],
-		"stamp": "2019-07-02T13:57:13.196Z"
-	},
-	"Sources/Methods/generate_constants_xlf.4dm": {
-		"startSelection": 75,
-		"endSelection": 75,
-		"firstSelectedLine": 13,
-		"lastSelectedLine": 13,
-		"folding": [],
-		"bookmarks": [],
-		"stamp": "2019-07-29T04:26:04.177Z"
-	},
-	"Sources/Methods/generate_project_vs.4dm": {
-		"startSelection": 19,
-		"endSelection": 19,
-		"firstSelectedLine": 12,
-		"lastSelectedLine": 12,
-		"folding": [],
-		"bookmarks": [],
-		"stamp": "2019-07-24T08:49:03.338Z"
-	},
-	"Sources/Methods/generate_project.4dm": {
-		"startSelection": 0,
-		"endSelection": 0,
-		"firstSelectedLine": 0,
-		"lastSelectedLine": 0,
-		"folding": [],
-		"bookmarks": [],
-		"stamp": "2021-07-31T05:52:02.000Z"
-	},
-	"Sources/Methods/generate_project_source.4dm": {
-		"startSelection": 18,
-		"endSelection": 18,
-		"firstSelectedLine": 5,
-		"lastSelectedLine": 5,
-		"folding": [],
-		"bookmarks": [],
-		"stamp": "2019-07-02T14:36:13.407Z"
-	},
-	"Sources/Methods/generate_file_from_template.4dm": {
-		"startSelection": 12,
-		"endSelection": 12,
-		"firstSelectedLine": 32,
-		"lastSelectedLine": 32,
-		"folding": [],
-		"bookmarks": [],
-		"stamp": "2019-07-29T04:26:04.720Z"
-	},
-	"Sources/Methods/generate_project_plugin_stub.4dm": {
-		"startSelection": 33,
-		"endSelection": 33,
-		"firstSelectedLine": 48,
-		"lastSelectedLine": 48,
-		"folding": [],
-		"bookmarks": [],
-		"stamp": "2019-07-02T14:18:29.030Z"
-	},
-	"Sources/Methods/generate_project_infoplist.4dm": {
-		"startSelection": 17,
-		"endSelection": 17,
-		"firstSelectedLine": 11,
-		"lastSelectedLine": 11,
-		"folding": [],
-		"bookmarks": [],
-		"stamp": "2019-07-02T13:51:21.190Z"
-	},
 	"Sources/Forms/フォーム1/ObjectMethods/ボタン.4dm": {
 		"startSelection": 58,
 		"endSelection": 58,
@@ -171,13 +99,13 @@
 		"stamp": "2019-07-02T23:15:40.975Z"
 	},
 	"Sources/Methods/TEST.4dm": {
-		"startSelection": 39,
-		"endSelection": 0,
-		"firstSelectedLine": 9,
-		"lastSelectedLine": 0,
+		"startSelection": 59,
+		"endSelection": 59,
+		"firstSelectedLine": 5,
+		"lastSelectedLine": 5,
 		"folding": [],
 		"bookmarks": [],
-		"stamp": "2021-08-01T04:25:41.941Z"
+		"stamp": "2021-08-03T03:19:05.441Z"
 	},
 	"Sources/Methods/TEST_v17.4dm": {
 		"startSelection": 0,
@@ -188,7 +116,19 @@
 		"bookmarks": [],
 		"stamp": "2019-07-07T00:13:49.000Z"
 	},
-	"Sources/Methods/update_manifest_json.4dm": {
+	"Sources/Methods/AR.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 16,
+		"lastSelectedLine": 16,
+		"folding": [
+			102,
+			124
+		],
+		"bookmarks": [],
+		"stamp": "2021-08-03T18:19:18.001Z"
+	},
+	"Trash/Methods/(update_manifest_json).4dm": {
 		"startSelection": 44,
 		"endSelection": 44,
 		"firstSelectedLine": 10,
@@ -196,5 +136,150 @@
 		"folding": [],
 		"bookmarks": [],
 		"stamp": "2019-12-13T04:37:40.619Z"
+	},
+	"Sources/Methods/hex_to_data.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 0,
+		"lastSelectedLine": 0,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2021-05-11T07:58:09.913Z"
+	},
+	"Sources/Methods/TEST_protocol.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 16,
+		"lastSelectedLine": 16,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2021-08-03T16:20:30.442Z"
+	},
+	"Sources/Methods/make_request.4dm": {
+		"startSelection": 30,
+		"endSelection": 30,
+		"firstSelectedLine": 25,
+		"lastSelectedLine": 25,
+		"folding": [
+			8,
+			17,
+			23,
+			30,
+			37,
+			52,
+			87,
+			98,
+			105,
+			112,
+			119,
+			126,
+			133,
+			150,
+			157,
+			164,
+			171,
+			179
+		],
+		"bookmarks": [],
+		"stamp": "2021-08-03T18:25:33.840Z"
+	},
+	"Sources/Methods/append_data.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 0,
+		"lastSelectedLine": 0,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2021-08-03T04:10:47.061Z"
+	},
+	"Sources/Methods/get_xor.4dm": {
+		"startSelection": 11,
+		"endSelection": 11,
+		"firstSelectedLine": 13,
+		"lastSelectedLine": 13,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2021-08-03T04:32:32.512Z"
+	},
+	"Sources/Methods/close_data.4dm": {
+		"startSelection": 8,
+		"endSelection": 8,
+		"firstSelectedLine": 10,
+		"lastSelectedLine": 10,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2021-08-03T15:04:22.281Z"
+	},
+	"Sources/Methods/parse_response.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 10,
+		"lastSelectedLine": 10,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2021-08-03T16:22:38.376Z"
+	},
+	"Sources/Methods/TEST_send.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 3,
+		"lastSelectedLine": 3,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2021-08-03T16:05:46.755Z"
+	},
+	"Sources/Methods/get_option.4dm": {
+		"startSelection": 19,
+		"endSelection": 19,
+		"firstSelectedLine": 20,
+		"lastSelectedLine": 20,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2021-08-03T17:00:32.646Z"
+	},
+	"Sources/Methods/exec.4dm": {
+		"startSelection": 39,
+		"endSelection": 39,
+		"firstSelectedLine": 28,
+		"lastSelectedLine": 28,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2021-08-03T18:47:41.333Z"
+	},
+	"Trash/Methods/(send_request).4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 15,
+		"lastSelectedLine": 15,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2021-08-03T16:03:49.643Z"
+	},
+	"Trash/Methods/(call_device).4dm": {
+		"startSelection": 23,
+		"endSelection": 23,
+		"firstSelectedLine": 11,
+		"lastSelectedLine": 11,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2021-08-03T15:13:19.212Z"
+	},
+	"Sources/Methods/ascii_to_data.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 0,
+		"lastSelectedLine": 0,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2021-05-12T08:32:04.439Z"
+	},
+	"Sources/Methods/append_data_with_size.4dm": {
+		"startSelection": 6,
+		"endSelection": 6,
+		"firstSelectedLine": 36,
+		"lastSelectedLine": 36,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2021-08-03T17:58:11.522Z"
 	}
 }

@@ -35,87 +35,87 @@ void PluginMain(PA_long32 selector, PA_PluginParameters params) {
 
 #if VERSIONWIN
 static LONG GetStringRegKey(HKEY hKey, const std::wstring &strValueName, std::wstring &strValue, const std::wstring &strDefaultValue) {
-
-	strValue = strDefaultValue;
-	WCHAR szBuffer[512];
-	DWORD dwBufferSize = sizeof(szBuffer);
-	ULONG nError;
-	nError = RegQueryValueExW(hKey, strValueName.c_str(), 0, NULL, (LPBYTE)szBuffer, &dwBufferSize);
-	if (ERROR_SUCCESS == nError)
-	{
-		strValue = szBuffer;
-	}
-	return nError;
+    
+    strValue = strDefaultValue;
+    WCHAR szBuffer[512];
+    DWORD dwBufferSize = sizeof(szBuffer);
+    ULONG nError;
+    nError = RegQueryValueExW(hKey, strValueName.c_str(), 0, NULL, (LPBYTE)szBuffer, &dwBufferSize);
+    if (ERROR_SUCCESS == nError)
+    {
+        strValue = szBuffer;
+    }
+    return nError;
 }
 #endif
 
 static bool findCom(std::wstring& name, std::wstring& port) {
+#if VERSIONWIN
+    HDEVINFO hDevInfo = SetupDiGetClassDevs(&GUID_DEVINTERFACE_COMPORT,
+                                            NULL, NULL,
+                                            ( /* DIGCF_PRESENT | */ DIGCF_INTERFACEDEVICE));
     
-#if VERSIONWIN
-	
-	HDEVINFO hDevInfo = SetupDiGetClassDevs(&GUID_DEVINTERFACE_COMPORT,
-		NULL, NULL,
-( /* DIGCF_PRESENT | */ DIGCF_INTERFACEDEVICE));
-
-if (hDevInfo != INVALID_HANDLE_VALUE) {
-	bool bMoreItems = true;
-	int nIndex = 0;
-	SP_DEVINFO_DATA devInfo{};
-	while (bMoreItems)
-	{
-		devInfo.cbSize = sizeof(SP_DEVINFO_DATA);
-		bMoreItems = SetupDiEnumDeviceInfo(hDevInfo, nIndex, &devInfo);
-		if (bMoreItems)
-		{
-			HKEY hKey = SetupDiOpenDevRegKey(hDevInfo, &devInfo,
-				DICS_FLAG_GLOBAL, 0, DIREG_DEV, KEY_QUERY_VALUE);
-			if (hKey != INVALID_HANDLE_VALUE) {
-				std::wstring PortName, FriendlyName;
-				if (ERROR_SUCCESS == GetStringRegKey(hKey, L"PortName", PortName, L"")) {
-					DWORD dwType = 0;
-					DWORD dwSize = 0;
-					//Query initially to get the buffer size required
-					if (!SetupDiGetDeviceRegistryProperty(hDevInfo, &devInfo, SPDRP_DEVICEDESC, &dwType, nullptr, 0, &dwSize))
-					{
-						std::vector<BYTE> friendlyName;
-						friendlyName.resize(dwSize);
-						if (SetupDiGetDeviceRegistryProperty(hDevInfo, &devInfo, SPDRP_DEVICEDESC, &dwType, friendlyName.data(), dwSize, &dwSize)) {
-							FriendlyName = reinterpret_cast<const wchar_t*>(friendlyName.data());
-							if (wcsnicmp(FriendlyName.c_str(), name.c_str(), name.length()) == 0) {
-								port = PortName;
-								return true;
-							}
-						}
-					}
-				}
-			}
-		}
-		++nIndex;
-	}
-}
+    if (hDevInfo != INVALID_HANDLE_VALUE) {
+        bool bMoreItems = true;
+        int nIndex = 0;
+        SP_DEVINFO_DATA devInfo{};
+        while (bMoreItems)
+        {
+            devInfo.cbSize = sizeof(SP_DEVINFO_DATA);
+            bMoreItems = SetupDiEnumDeviceInfo(hDevInfo, nIndex, &devInfo);
+            if (bMoreItems)
+            {
+                HKEY hKey = SetupDiOpenDevRegKey(hDevInfo, &devInfo,
+                                                 DICS_FLAG_GLOBAL, 0, DIREG_DEV, KEY_QUERY_VALUE);
+                if (hKey != INVALID_HANDLE_VALUE) {
+                    std::wstring PortName, FriendlyName;
+                    if (ERROR_SUCCESS == GetStringRegKey(hKey, L"PortName", PortName, L"")) {
+                        DWORD dwType = 0;
+                        DWORD dwSize = 0;
+                        //Query initially to get the buffer size required
+                        if (!SetupDiGetDeviceRegistryProperty(hDevInfo, &devInfo, SPDRP_DEVICEDESC, &dwType, nullptr, 0, &dwSize))
+                        {
+                            std::vector<BYTE> friendlyName;
+                            friendlyName.resize(dwSize);
+                            if (SetupDiGetDeviceRegistryProperty(hDevInfo, &devInfo, SPDRP_DEVICEDESC, &dwType, friendlyName.data(), dwSize, &dwSize)) {
+                                FriendlyName = reinterpret_cast<const wchar_t*>(friendlyName.data());
+                                if (wcsnicmp(FriendlyName.c_str(), name.c_str(), name.length()) == 0) {
+                                    port = PortName;
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            ++nIndex;
+        }
+    }
 #endif
-return false;
+    return false;
 }
 
-#if VERSIONWIN
 static void getError(PA_ObjectRef status) {
-
-	const DWORD dwError = GetLastError();
-	ob_set_n(status, L"Error", dwError);
-	LPWSTR messageBuffer = nullptr;
-	size_t size = FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
-		NULL, dwError, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), (LPWSTR)&messageBuffer, 0, NULL);
-	std::wstring message(messageBuffer, size);
-	ob_set_a(status, L"ErrorMessage", message.c_str());
-	LocalFree(messageBuffer);
-}
+#if VERSIONWIN
+    const DWORD dwError = GetLastError();
+    ob_set_n(status, L"Error", dwError);
+    LPWSTR messageBuffer = nullptr;
+    size_t size = FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
+                                NULL, dwError, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), (LPWSTR)&messageBuffer, 0, NULL);
+    std::wstring message(messageBuffer, size);
+    ob_set_a(status, L"ErrorMessage", message.c_str());
+    LocalFree(messageBuffer);
 #endif
+}
 
 #pragma mark -
 
 static void SMJ_Request(PA_PluginParameters params) {
 
 	PA_ObjectRef status = PA_CreateObject();
+    
+    ob_set_b(status, L"success", false);
+    
 	PA_Unistring *arg1 = PA_GetStringParameter(params, 1);
 	std::wstring deviceName, devicePath, devicePort;
 
@@ -175,73 +175,88 @@ static void SMJ_Request(PA_PluginParameters params) {
 
 				SetCommTimeouts(hComPort, &timeouts);
 
-				if (GetCommTimeouts(hComPort, &timeouts)) {
-				ob_set_n(status, L"ReadIntervalTimeout", timeouts.ReadIntervalTimeout);
-				ob_set_n(status, L"ReadTotalTimeoutConstant", timeouts.ReadTotalTimeoutConstant);
-				ob_set_n(status, L"ReadTotalTimeoutMultiplier", timeouts.ReadTotalTimeoutMultiplier);
-				ob_set_n(status, L"WriteTotalTimeoutConstant", timeouts.WriteTotalTimeoutConstant);
-				ob_set_n(status, L"WriteTotalTimeoutMultiplier", timeouts.WriteTotalTimeoutMultiplier);
-				}
+                if (GetCommTimeouts(hComPort, &timeouts)) {
+                    ob_set_n(status, L"ReadIntervalTimeout", timeouts.ReadIntervalTimeout);
+                    ob_set_n(status, L"ReadTotalTimeoutConstant", timeouts.ReadTotalTimeoutConstant);
+                    ob_set_n(status, L"ReadTotalTimeoutMultiplier", timeouts.ReadTotalTimeoutMultiplier);
+                    ob_set_n(status, L"WriteTotalTimeoutConstant", timeouts.WriteTotalTimeoutConstant);
+                    ob_set_n(status, L"WriteTotalTimeoutMultiplier", timeouts.WriteTotalTimeoutMultiplier);
+                }
 				
-				void *bytes = NULL;
-				std::vector<uint8_t>request(0);
-				PA_long32 len = PA_GetBlobParameter(params, 2, bytes);
-				if (len)
-				{
-					request.resize(len);
-					PA_GetBlobParameter(params, 2, request.data());
-					DWORD NumberOfBytesWritten;
-					if (WriteFile(
-						hComPort, request.data(), request.size(),
-						&NumberOfBytesWritten, NULL)) {
-						ob_set_n(status, L"NumberOfBytesWritten", NumberOfBytesWritten);
-					}
-					else {
-						getError(status);
-					}
-				}
-				else {
-					ob_set_n(status, L"NumberOfBytesWritten", 0);
-				}
-
-				bool moreData = true;
-				DWORD NumberOfBytesRead;
-				std::vector<uint8_t>response(4096);
-				while (moreData)
-				{
-					if (ReadFile(
-						hComPort, response.data(), response.size(),
-						&NumberOfBytesRead, NULL)) {
-						ob_set_n(status, L"NumberOfBytesRead", NumberOfBytesRead);
-						moreData = false;
-					}
-					else {
-						const DWORD dwError = GetLastError();
-						if (dwError == ERROR_INSUFFICIENT_BUFFER) {
-							response.resize(response.size() + 4096);
-						}
-						else {
-							getError(status);
-							moreData = false;
-						}
-					}
-				}
-				PA_Handle d = PA_NewHandle((unsigned int)NumberOfBytesRead);
-				if (eER_NoErr == PA_GetLastError())
-				{
-					if (NumberOfBytesRead)
-					{
-						memmove(PA_LockHandle(d), (char *)response.data(), (unsigned int)NumberOfBytesRead);
-						PA_UnlockHandle(d);
-					}
-					PA_SetBlobHandleParameter(params, 3, d);
-				}
+                void *bytes = NULL;
+                std::vector<uint8_t>request(0);
+                PA_long32 len = PA_GetBlobParameter(params, 2, bytes);
+                
+                bool writeSuccess = true;
+                
+                if (len) {
+                    request.resize(len);
+                    PA_GetBlobParameter(params, 2, request.data());
+                    DWORD NumberOfBytesWritten;
+                    if (WriteFile(
+                                  hComPort, request.data(), request.size(),
+                                  &NumberOfBytesWritten, NULL)) {
+                        ob_set_n(status, L"NumberOfBytesWritten", NumberOfBytesWritten);
+                    }
+                    else {
+                        getError(status);
+                        writeSuccess = false;
+                    }
+                }
+                
+                if(writeSuccess) {
+                    
+                    bool readSuccess = true;
+                    
+                    bool moreData = true;
+                    
+                    DWORD NumberOfBytesRead;
+                    std::vector<uint8_t>response(4096);
+                    
+                    while (moreData) {
+                        if (ReadFile(
+                            hComPort, response.data(), response.size(),
+                            &NumberOfBytesRead, NULL)) {
+                            ob_set_n(status, L"NumberOfBytesRead", NumberOfBytesRead);
+                            moreData = false;
+                        }
+                        else {
+                            const DWORD dwError = GetLastError();
+                            if (dwError == ERROR_INSUFFICIENT_BUFFER) {
+                                response.resize(response.size() + 4096);
+                            }
+                            else {
+                                getError(status);
+                                moreData = false;
+                                readSuccess = false;
+                            }
+                        }
+                    }
+                    
+                    if(readSuccess) {
+                        PA_Handle d = PA_NewHandle((unsigned int)NumberOfBytesRead);
+                        if (eER_NoErr == PA_GetLastError())
+                        {
+                            if (NumberOfBytesRead)
+                            {
+                                memmove(PA_LockHandle(d), (char *)response.data(), (unsigned int)NumberOfBytesRead);
+                                PA_UnlockHandle(d);
+                            }
+                            PA_SetBlobHandleParameter(params, 3, d);
+                            ob_set_b(status, L"success", true);
+                        }
+                    }
+                }
 			}
 			else {
 				getError(status);
 			}
 #endif
-		}
+        }else{
+            /* device is not in registry */
+        }
+    }else{
+        /* device name is mandatory */
     }
 
 	PA_ReturnObject(params, status);

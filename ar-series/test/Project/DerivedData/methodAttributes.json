@@ -1,65 +1,192 @@
 ﻿{
 	"methods": {
-		"generate_constants_xlf": {
-			"timeStamp": "2019-07-29T04:26:04.000Z",
+		"AR": {
+			"timeStamp": "2021-08-03T18:19:18.001Z",
 			"attributes": {
 				"invisible": true,
 				"preemptive": "capable"
 			}
 		},
-		"generate_file_from_template": {
-			"timeStamp": "2019-07-29T04:26:04.000Z",
+		"parse_response": {
+			"timeStamp": "2021-08-03T16:22:38.376Z",
 			"attributes": {
 				"invisible": true,
 				"preemptive": "capable"
 			}
 		},
-		"generate_project": {
-			"timeStamp": "2021-07-31T05:52:02.000Z"
-		},
-		"generate_project_infoplist": {
-			"timeStamp": "2019-07-02T13:51:21.000Z",
+		"hex_to_data": {
+			"timeStamp": "2021-05-11T07:58:09.913Z",
 			"attributes": {
 				"invisible": true,
 				"preemptive": "capable"
 			}
 		},
-		"generate_project_plugin_stub": {
-			"timeStamp": "2019-07-23T08:36:58.000Z",
+		"close_data": {
+			"timeStamp": "2021-08-03T15:04:22.281Z",
 			"attributes": {
 				"invisible": true,
 				"preemptive": "capable"
 			}
 		},
-		"generate_project_source": {
-			"timeStamp": "2019-07-02T14:36:13.000Z",
+		"generic_error_method": {
+			"timeStamp": "2021-05-12T06:46:34.154Z",
 			"attributes": {
 				"invisible": true,
 				"preemptive": "capable"
 			}
 		},
-		"generate_project_vs": {
-			"timeStamp": "2019-07-24T08:49:03.000Z",
+		"TEST_send": {
+			"timeStamp": "2021-08-03T16:05:46.755Z",
+			"attributes": {
+				"invisible": true
+			}
+		},
+		"data_to_hex": {
+			"timeStamp": "2021-05-12T13:07:23.831Z",
 			"attributes": {
 				"invisible": true,
 				"preemptive": "capable"
 			}
 		},
-		"generate_project_xcode": {
-			"timeStamp": "2019-07-02T13:57:13.000Z",
+		"append_data_with_size": {
+			"timeStamp": "2021-08-03T17:58:11.522Z",
 			"attributes": {
 				"invisible": true,
 				"preemptive": "capable"
 			}
 		},
 		"TEST": {
-			"timeStamp": "2021-08-01T04:19:11.767Z"
+			"timeStamp": "2021-08-03T03:19:05.441Z",
+			"attributes": {
+				"invisible": true
+			}
 		},
-		"update_manifest_json": {
+		"int_to_hex": {
+			"timeStamp": "2021-05-12T08:38:50.685Z",
+			"attributes": {
+				"invisible": true,
+				"preemptive": "capable"
+			}
+		},
+		"append_data": {
+			"timeStamp": "2021-08-03T04:10:47.061Z",
+			"attributes": {
+				"invisible": true,
+				"preemptive": "capable"
+			}
+		},
+		"make_request": {
+			"timeStamp": "2021-08-03T18:25:33.840Z",
+			"attributes": {
+				"invisible": true
+			}
+		},
+		"exec": {
+			"timeStamp": "2021-08-03T18:47:41.333Z",
+			"attributes": {
+				"invisible": true
+			}
+		},
+		"data_to_text": {
+			"timeStamp": "2021-05-12T13:00:27.768Z",
+			"attributes": {
+				"invisible": true,
+				"preemptive": "capable"
+			}
+		},
+		"TEST_protocol": {
+			"timeStamp": "2021-08-03T16:20:30.442Z",
+			"attributes": {
+				"invisible": true
+			}
+		},
+		"ascii_to_data": {
+			"timeStamp": "2021-05-12T08:32:04.439Z",
+			"attributes": {
+				"invisible": true,
+				"preemptive": "capable"
+			}
+		},
+		"get_xor": {
+			"timeStamp": "2021-08-03T04:32:32.512Z",
+			"attributes": {
+				"invisible": true,
+				"preemptive": "capable"
+			}
+		},
+		"get_option": {
+			"timeStamp": "2021-08-03T17:00:32.646Z",
+			"attributes": {
+				"invisible": true
+			}
+		},
+		"(bits_to_ascii)": {
+			"timeStamp": "2021-05-12T14:27:08.841Z",
+			"attributes": {
+				"invisible": true,
+				"preemptive": "capable"
+			}
+		},
+		"(int_to_ascii_data)": {
+			"timeStamp": "2021-05-21T04:19:18.276Z",
+			"attributes": {
+				"invisible": true,
+				"preemptive": "capable"
+			}
+		},
+		"(int_to_data)": {
+			"timeStamp": "2021-05-21T04:32:10.842Z",
+			"attributes": {
+				"invisible": true,
+				"preemptive": "capable"
+			}
+		},
+		"(int_to_hex_data)": {
+			"timeStamp": "2021-05-21T04:32:34.194Z",
+			"attributes": {
+				"invisible": true,
+				"preemptive": "capable"
+			}
+		},
+		"(data_to_bits)": {
+			"timeStamp": "2021-05-12T13:37:03.283Z",
+			"attributes": {
+				"invisible": true,
+				"preemptive": "capable"
+			}
+		},
+		"(update_manifest_json)": {
 			"timeStamp": "2019-12-13T04:37:40.000Z",
 			"attributes": {
 				"invisible": true,
 				"preemptive": "capable"
+			}
+		},
+		"(call_device)": {
+			"timeStamp": "2021-08-03T15:13:19.212Z",
+			"attributes": {
+				"invisible": true,
+				"preemptive": "capable"
+			}
+		},
+		"(bits_to_data)": {
+			"timeStamp": "2021-05-12T13:49:32.114Z",
+			"attributes": {
+				"invisible": true,
+				"preemptive": "capable"
+			}
+		},
+		"(hex_to_int)": {
+			"timeStamp": "2021-05-12T13:45:12.036Z",
+			"attributes": {
+				"invisible": true,
+				"preemptive": "capable"
+			}
+		},
+		"(send_request)": {
+			"timeStamp": "2021-08-03T16:03:49.643Z",
+			"attributes": {
+				"invisible": true
 			}
 		}
 	}

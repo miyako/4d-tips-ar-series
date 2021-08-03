@@ -23,54 +23,6 @@
 		"width": 1138,
 		"height": 592
 	},
-	"Sources/Methods/generate_project_xcode.4dm": {
-		"left": 511,
-		"top": 304,
-		"width": 1129,
-		"height": 787
-	},
-	"Sources/Methods/generate_constants_xlf.4dm": {
-		"left": 478,
-		"top": 165,
-		"width": 1129,
-		"height": 762
-	},
-	"Sources/Methods/generate_project_vs.4dm": {
-		"left": 478,
-		"top": 165,
-		"width": 1129,
-		"height": 762
-	},
-	"Sources/Methods/generate_project.4dm": {
-		"left": 478,
-		"top": 140,
-		"width": 597,
-		"height": 495
-	},
-	"Sources/Methods/generate_project_source.4dm": {
-		"left": 511,
-		"top": 304,
-		"width": 1129,
-		"height": 787
-	},
-	"Sources/Methods/generate_file_from_template.4dm": {
-		"left": 478,
-		"top": 165,
-		"width": 1129,
-		"height": 762
-	},
-	"Sources/Methods/generate_project_plugin_stub.4dm": {
-		"left": 500,
-		"top": 130,
-		"width": 720,
-		"height": 399
-	},
-	"Sources/Methods/generate_project_infoplist.4dm": {
-		"left": 305,
-		"top": 248,
-		"width": 1129,
-		"height": 762
-	},
 	"Sources/Forms/フォーム1/ObjectMethods/ボタン.4dm": {
 		"left": 490,
 		"top": 229,
@@ -144,10 +96,10 @@
 		"height": 762
 	},
 	"Sources/Methods/TEST.4dm": {
-		"left": 34,
-		"top": 198,
-		"width": 877,
-		"height": 637
+		"left": 2387,
+		"top": 216,
+		"width": 570,
+		"height": 350
 	},
 	"Sources/Methods/TEST_v17.4dm": {
 		"left": 450,
@@ -155,10 +107,148 @@
 		"width": 877,
 		"height": 662
 	},
-	"Sources/Methods/update_manifest_json.4dm": {
+	"Sources/Methods/AR.4dm": {
+		"left": 2492,
+		"top": 45,
+		"width": 665,
+		"height": 729
+	},
+	"Trash/Methods/(generate_constants_xlf).4dm": {
+		"left": 478,
+		"top": 165,
+		"width": 1129,
+		"height": 762
+	},
+	"Trash/Methods/(generate_file_from_template).4dm": {
+		"left": 478,
+		"top": 165,
+		"width": 1129,
+		"height": 762
+	},
+	"Trash/Methods/(generate_project).4dm": {
+		"left": 478,
+		"top": 140,
+		"width": 597,
+		"height": 495
+	},
+	"Trash/Methods/(generate_project_infoplist).4dm": {
+		"left": 305,
+		"top": 248,
+		"width": 1129,
+		"height": 762
+	},
+	"Trash/Methods/(generate_project_plugin_stub).4dm": {
+		"left": 500,
+		"top": 130,
+		"width": 720,
+		"height": 399
+	},
+	"Trash/Methods/(generate_project_source).4dm": {
+		"left": 511,
+		"top": 304,
+		"width": 1129,
+		"height": 787
+	},
+	"Trash/Methods/(generate_project_vs).4dm": {
+		"left": 478,
+		"top": 165,
+		"width": 1129,
+		"height": 762
+	},
+	"Trash/Methods/(generate_project_xcode).4dm": {
+		"left": 511,
+		"top": 304,
+		"width": 1129,
+		"height": 787
+	},
+	"Trash/Methods/(update_manifest_json).4dm": {
 		"left": 173,
 		"top": 458,
 		"width": 1129,
 		"height": 757
+	},
+	"Sources/Methods/hex_to_data.4dm": {
+		"left": 591,
+		"top": 266,
+		"width": 778,
+		"height": 488
+	},
+	"Sources/Methods/TEST_protocol.4dm": {
+		"left": 2081,
+		"top": 155,
+		"width": 630,
+		"height": 399
+	},
+	"Sources/Methods/make_request.4dm": {
+		"left": 2239,
+		"top": 63,
+		"width": 550,
+		"height": 531
+	},
+	"Sources/Methods/append_data.4dm": {
+		"left": 550,
+		"top": 249,
+		"width": 787,
+		"height": 660
+	},
+	"Sources/Methods/get_xor.4dm": {
+		"left": 664,
+		"top": 519,
+		"width": 787,
+		"height": 660
+	},
+	"Sources/Methods/close_data.4dm": {
+		"left": 2248,
+		"top": 348,
+		"width": 787,
+		"height": 660
+	},
+	"Sources/Methods/parse_response.4dm": {
+		"left": 2318,
+		"top": 51,
+		"width": 853,
+		"height": 610
+	},
+	"Sources/Methods/TEST_send.4dm": {
+		"left": 2081,
+		"top": 155,
+		"width": 630,
+		"height": 399
+	},
+	"Sources/Methods/get_option.4dm": {
+		"left": 2464,
+		"top": 45,
+		"width": 789,
+		"height": 448
+	},
+	"Sources/Methods/exec.4dm": {
+		"left": 2126,
+		"top": 75,
+		"width": 683,
+		"height": 758
+	},
+	"Trash/Methods/(send_request).4dm": {
+		"left": 2460,
+		"top": 114,
+		"width": 495,
+		"height": 378
+	},
+	"Trash/Methods/(call_device).4dm": {
+		"left": 2536,
+		"top": 60,
+		"width": 739,
+		"height": 405
+	},
+	"Sources/Methods/ascii_to_data.4dm": {
+		"left": 591,
+		"top": 266,
+		"width": 778,
+		"height": 488
+	},
+	"Sources/Methods/append_data_with_size.4dm": {
+		"left": 2078,
+		"top": 96,
+		"width": 665,
+		"height": 729
 	}
 }

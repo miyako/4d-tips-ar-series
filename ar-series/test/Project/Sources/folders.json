@@ -1,15 +1,36 @@
 ﻿{
-	"export_project": {
+	"(export_project)": {},
+	"error": {
 		"methods": [
-			"generate_constants_xlf",
-			"generate_file_from_template",
-			"generate_project",
-			"generate_project_infoplist",
-			"generate_project_plugin_stub",
-			"generate_project_source",
-			"generate_project_vs",
-			"generate_project_xcode"
+			"generic_error_method"
 		]
 	},
-	"trash": {}
+	"functions": {
+		"methods": [
+			"append_data",
+			"append_data_with_size",
+			"ascii_to_data",
+			"close_data",
+			"data_to_hex",
+			"data_to_text",
+			"exec",
+			"get_option",
+			"get_xor",
+			"hex_to_data",
+			"int_to_hex",
+			"parse_response"
+		]
+	},
+	"test": {
+		"methods": [
+			"TEST",
+			"TEST_protocol",
+			"TEST_send"
+		]
+	},
+	"trash": {
+		"groups": [
+			"(export_project)"
+		]
+	}
 }
