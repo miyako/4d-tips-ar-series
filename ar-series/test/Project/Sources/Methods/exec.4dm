@@ -9,7 +9,7 @@ $options:=get_option ($command)
 C_BLOB:C604($request;$response)
 
 Case of 
-	: ($command=0x0072) | ($command=0x0076) | ($command=0x007A) | ($command=0x005F) | ($command=0x0052) | ($command=0x0040) | ($command=0x0049) | ($command=0x0053) | ($command=0x0051) | ($command=0x0054) | ($command=0x0055) | ($command=0x0059) | ($command=0x0058)
+	: ($command=0x0072) | ($command=0x0076) | ($command=0x007A) | ($command=0x005F) | ($command=0x0052) | ($command=0x0040) | ($command=0x0049) | ($command=0x0053) | ($command=0x0051) | ($command=0x0054) | ($command=0x0055) | ($command=0x0059) | ($command=0x0058) | ($command=0x0095) | ($command=0x0096)
 		
 		$request:=make_request ($command)
 		
@@ -21,13 +21,17 @@ Case of
 		
 		$request:=make_request ($command;$2;$3)
 		
-	: ($command=0x0043) | ($command=0x0044) | ($command=0x0045)
+	: ($command=0x0043) | ($command=0x0044) | ($command=0x0045) | ($command=0x005A) | ($command=0x0043)
 		
 		$request:=make_request ($command;$2;$3;$4)
 		
-	: ($command=0x004D)
+	: ($command=0x004D) | ($command=0x0041)
 		
 		$request:=make_request ($command;$2;$3;$4;$5)
+		
+	: ($command=0x004E)
+		
+		$request:=make_request ($command;$2;$3;$4;$5;$6)
 		
 	: ($command=0x0046)
 		

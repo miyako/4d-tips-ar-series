@@ -25,9 +25,21 @@ $CONTROLS.V:=0x0056
 $CONTROLS.Z:=0x005A
 $CONTROLS.P:=0x0050
 $CONTROLS.LEFTSQUAREBRACKET:=0x005B
+$CONTROLS.SP:=0x0020
+
+$BARCODE:=New object:C1471
+$BARCODE.CODE128:=0x0000
+$BARCODE.CODE128_EX:=0x0001
+$BARCODE.CODE39:=0x0002
+$BARCODE.CODE39_EX:=0x0003
+$BARCODE.ITF:=0x0004
+$BARCODE.ITF_EX:=0x0005
+$BARCODE.CODABAR:=0x0006
+$BARCODE.CODABAR_EX:=0x0007
+
+$EXPORT.BARCODE:=$BARCODE
 
 $CONST:=New object:C1471
-$CONST.OK:=0x0020
 $CONST.COMMA:=Character code:C91(",")
 
 $EXPORT.CONST:=$CONST
@@ -80,6 +92,7 @@ $EXPORT.ERROR:=$ERROR
 
 $EXPORT.asChar:=Formula:C1597(Character code:C91(String:C10(Int:C8($1))))
 $EXPORT.asCode:=Formula:C1597(Character code:C91(String:C10($1)))
+$EXPORT.asImage:=Formula:C1597(data_to_hex (bits_to_data (String:C10($1))))
 
 $EXPORT.read:=Formula:C1597(exec (0x0074;$1;$2))
 $EXPORT.readEx:=Formula:C1597(exec (0x0078;$1;$2))
@@ -89,6 +102,17 @@ $EXPORT.readAuto:=Formula:C1597(exec (0x0072))
 $EXPORT.readAutoEx:=Formula:C1597(exec (0x0076))
 $EXPORT.readAutoBuffer:=Formula:C1597(exec (0x007A))
 
+
+$EXPORT.disableSound:=Formula:C1597(exec (0x005A;0;0x0020;0x0020))
+$EXPORT.enableSound:=Formula:C1597(exec (0x005A;1;0x0020;0x0020))
+
+$EXPORT.setLightGreen:=Formula:C1597(exec (0x005A;0x0020;"G";0x0020))
+$EXPORT.setLightOrange:=Formula:C1597(exec (0x005A;0x0020;"O";0x0020))
+$EXPORT.setLightRed:=Formula:C1597(exec (0x005A;0x0020;"R";0x0020))
+
+$EXPORT.startBlinking:=Formula:C1597(exec (0x005A;0x0020;0x0020;0x0032))
+$EXPORT.singleBlink:=Formula:C1597(exec (0x005A;0x0020;0x0020;0x0033))
+$EXPORT.tripleBlink:=Formula:C1597(exec (0x005A;0x0020;0x0020;0x0034))
 
 $EXPORT.disableCleaning:=Formula:C1597(exec (0x005B;0))
 $EXPORT.enableCleaning:=Formula:C1597(exec (0x005B;1))
@@ -143,6 +167,9 @@ End if
 
 $EXPORT.append:=Formula:C1597(append_data )
 $EXPORT.appendEx:=Formula:C1597(append_data_with_size )
+$EXPORT.appendNumeric:=Formula:C1597(append_as_numeric )
+$EXPORT.appendText:=Formula:C1597(append_as_text )
+$EXPORT.appendBarcode:=Formula:C1597(append_as_code128 )
 $EXPORT.close:=Formula:C1597(close_data )
 $EXPORT.parse:=Formula:C1597(parse_response )
 

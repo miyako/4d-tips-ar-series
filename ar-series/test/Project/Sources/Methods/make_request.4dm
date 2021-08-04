@@ -45,11 +45,49 @@ Case of
 		
 	: ($command=0x0041)  //印字データ設定コマンド
 		
+		This:C1470.append(->$request;This:C1470.CONTROLS.STX)\
+			.append(->$request;$command)
+		
+		$countParams:=Count parameters:C259
+		
+		If ($countParams>4)
+			
+			This:C1470.append(->$request;This:C1470.asChar($3))\
+				.append(->$request;This:C1470.CONST.COMMA)\
+				.appendNumeric(->$request;$4)\
+				.append(->$request;This:C1470.CONST.COMMA)\
+				.appendNumeric(->$request;This:C1470.asChar($5))\
+				.append(->$request;This:C1470.CONST.COMMA)
+			
+		End if 
+		
+		C_BLOB:C604($data)
+		$value:=String:C10($2)
+		
+		ON ERR CALL:C155("generic_error_method")
+		CONVERT FROM TEXT:C1011($value;"windows-31j";$data)
+		ON ERR CALL:C155("")
+		
+		This:C1470.appendText(->$request;$data).append(->$request;This:C1470.CONTROLS.ETX).close(->$request)
+		
 	: ($command=0x0043)  //外部イメージデータの展開コマンド(ラインモード)
+		
+		This:C1470.append(->$request;This:C1470.CONTROLS.STX)\
+			.append(->$request;$command)\
+			.appendNumeric(->$request;$2)\
+			.append(->$request;This:C1470.CONST.COMMA)\
+			.appendNumeric(->$request;$3)\
+			.append(->$request;This:C1470.CONST.COMMA)\
+			.appendText(->$request;This:C1470.asImage($4))\
+			.append(->$request;This:C1470.CONTROLS.ETX).close(->$request)
 		
 	: ($command=0x0044)  //全角外字フォント登録コマンド
 		
+		  //not implemented
+		
 	: ($command=0x0045)  //半角外字フォント登録コマンド
+		
+		  //not implemented
 		
 	: ($command=0x0046)  //消去+印字→排出コマンド
 		
@@ -95,7 +133,54 @@ Case of
 		
 	: ($command=0x004D)  //外部データ展開コマンド(ブロックモード)
 		
+		This:C1470.append(->$request;This:C1470.CONTROLS.STX)\
+			.append(->$request;$command)\
+			.appendNumeric(->$request;$2)\
+			.append(->$request;This:C1470.CONST.COMMA)\
+			.appendNumeric(->$request;$3)\
+			.append(->$request;This:C1470.CONST.COMMA)\
+			.appendNumeric(->$request;$4)\
+			.append(->$request;This:C1470.CONST.COMMA)\
+			.appendText(->$request;This:C1470.asImage($5))\
+			.append(->$request;This:C1470.CONTROLS.ETX).close(->$request)
+		
 	: ($command=0x004E)  //バーコードデータ設定コマンド
+		
+		This:C1470.append(->$request;This:C1470.CONTROLS.STX)\
+			.append(->$request;$command)\
+			.appendNumeric(->$request;$2)\
+			.append(->$request;This:C1470.CONST.COMMA)\
+			.appendNumeric(->$request;$3)\
+			.append(->$request;This:C1470.CONST.COMMA)\
+			.append(->$request;This:C1470.asChar($4))\
+			.append(->$request;This:C1470.CONST.COMMA)\
+			.appendText(->$request;$5)\
+			.append(->$request;This:C1470.CONST.COMMA)
+		
+		$barcodeType:=Int:C8($4)
+		
+		Case of 
+			: ($barcodeType=This:C1470.BARCODE.CODE128) | ($barcodeType=This:C1470.BARCODE.CODE128_EX)
+				
+				This:C1470.appendBarcode(->$request;$6;11)
+				
+			: ($barcodeType=This:C1470.BARCODE.CODE39) | ($barcodeType=This:C1470.BARCODE.CODE39_EX)
+				
+				This:C1470.appendText(->$request;$6;10)
+				
+			: ($barcodeType=This:C1470.BARCODE.ITF) | ($barcodeType=This:C1470.BARCODE.ITF_EX)
+				
+				This:C1470.appendText(->$request;$6;20)
+				
+			: ($barcodeType=This:C1470.BARCODE.CODABAR) | ($barcodeType=This:C1470.BARCODE.CODABAR_EX)
+				
+				This:C1470.appendText(->$request;$6;13)
+				
+		End case 
+		
+		  //set barcode data here
+		
+		This:C1470.append(->$request;This:C1470.CONTROLS.ETX).close(->$request)
 		
 	: ($command=0x0053)  //カード前方待機コマンド
 		
@@ -141,13 +226,31 @@ Case of
 		
 	: ($command=0x005A)  //LED、ブザー制御コマンド
 		
-	: ($command=0x0095)  //カード搬送回数要求コマンド
+		This:C1470.append(->$request;This:C1470.CONTROLS.STX)\
+			.append(->$request;$command)\
+			.append(->$request;This:C1470.asCode($option))\
+			.append(->$request;This:C1470.asChar($2))\
+			.append(->$request;This:C1470.asChar($3))\
+			.append(->$request;This:C1470.asChar($4))\
+			.append(->$request;This:C1470.CONTROLS.ETX).close(->$request)
+		
+	: ($command=0x0095) | ($command=0x0096)
 		
 		  //デ-タ列は10桁
 		
-	: ($command=0x0096)  //印刷回数要求コマンド
-		
-		  //デ-タ列は10桁
+		This:C1470.append(->$request;This:C1470.CONTROLS.STX)\
+			.append(->$request;$command)\
+			.append(->$request;This:C1470.asChar(0))\
+			.append(->$request;This:C1470.asChar(0))\
+			.append(->$request;This:C1470.asChar(0))\
+			.append(->$request;This:C1470.asChar(0))\
+			.append(->$request;This:C1470.asChar(0))\
+			.append(->$request;This:C1470.asChar(0))\
+			.append(->$request;This:C1470.asChar(0))\
+			.append(->$request;This:C1470.asChar(0))\
+			.append(->$request;This:C1470.asChar(0))\
+			.append(->$request;This:C1470.asChar(0))\
+			.append(->$request;This:C1470.CONTROLS.ETX).close(->$request)
 		
 	: ($command=0x005B)  //クリーニングボタン有効/無効コマンド
 		

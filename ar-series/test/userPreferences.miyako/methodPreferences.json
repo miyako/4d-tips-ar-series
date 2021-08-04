@@ -117,16 +117,16 @@
 		"stamp": "2019-07-07T00:13:49.000Z"
 	},
 	"Sources/Methods/AR.4dm": {
-		"startSelection": 0,
-		"endSelection": 0,
-		"firstSelectedLine": 16,
-		"lastSelectedLine": 16,
+		"startSelection": 8,
+		"endSelection": 15,
+		"firstSelectedLine": 93,
+		"lastSelectedLine": 93,
 		"folding": [
-			102,
-			124
+			126,
+			148
 		],
 		"bookmarks": [],
-		"stamp": "2021-08-03T18:19:18.001Z"
+		"stamp": "2021-08-04T05:08:19.255Z"
 	},
 	"Trash/Methods/(update_manifest_json).4dm": {
 		"startSelection": 44,
@@ -156,32 +156,38 @@
 		"stamp": "2021-08-03T16:20:30.442Z"
 	},
 	"Sources/Methods/make_request.4dm": {
-		"startSelection": 30,
-		"endSelection": 30,
-		"firstSelectedLine": 25,
-		"lastSelectedLine": 25,
+		"startSelection": 19,
+		"endSelection": 19,
+		"firstSelectedLine": 21,
+		"lastSelectedLine": 21,
 		"folding": [
 			8,
 			17,
 			23,
 			30,
 			37,
-			52,
-			87,
-			98,
-			105,
-			112,
-			119,
-			126,
-			133,
-			150,
-			157,
-			164,
-			171,
-			179
+			44,
+			71,
+			90,
+			125,
+			132,
+			145,
+			183,
+			190,
+			197,
+			204,
+			211,
+			218,
+			225,
+			235,
+			253,
+			260,
+			267,
+			274,
+			282
 		],
 		"bookmarks": [],
-		"stamp": "2021-08-03T18:25:33.840Z"
+		"stamp": "2021-08-04T05:15:02.629Z"
 	},
 	"Sources/Methods/append_data.4dm": {
 		"startSelection": 0,
@@ -238,13 +244,13 @@
 		"stamp": "2021-08-03T17:00:32.646Z"
 	},
 	"Sources/Methods/exec.4dm": {
-		"startSelection": 39,
-		"endSelection": 39,
-		"firstSelectedLine": 28,
-		"lastSelectedLine": 28,
+		"startSelection": 99,
+		"endSelection": 99,
+		"firstSelectedLine": 22,
+		"lastSelectedLine": 22,
 		"folding": [],
 		"bookmarks": [],
-		"stamp": "2021-08-03T18:47:41.333Z"
+		"stamp": "2021-08-04T05:09:21.786Z"
 	},
 	"Trash/Methods/(send_request).4dm": {
 		"startSelection": 0,
@@ -281,5 +287,50 @@
 		"folding": [],
 		"bookmarks": [],
 		"stamp": "2021-08-03T17:58:11.522Z"
+	},
+	"Sources/Methods/append_as_numeric.4dm": {
+		"startSelection": 41,
+		"endSelection": 41,
+		"firstSelectedLine": 5,
+		"lastSelectedLine": 5,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2021-08-04T05:15:42.007Z"
+	},
+	"Sources/Methods/append_as_text.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 3,
+		"lastSelectedLine": 3,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2021-08-04T05:15:32.181Z"
+	},
+	"Sources/Methods/append_as_code128.4dm": {
+		"startSelection": 15,
+		"endSelection": 0,
+		"firstSelectedLine": 11,
+		"lastSelectedLine": 9,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2021-08-04T03:31:29.194Z"
+	},
+	"Sources/Methods/TEST_barcode.4dm": {
+		"startSelection": 0,
+		"endSelection": 0,
+		"firstSelectedLine": 11,
+		"lastSelectedLine": 11,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2021-08-04T03:31:54.914Z"
+	},
+	"Sources/Methods/TEST_bitmap.4dm": {
+		"startSelection": 40,
+		"endSelection": 0,
+		"firstSelectedLine": 2,
+		"lastSelectedLine": 2,
+		"folding": [],
+		"bookmarks": [],
+		"stamp": "2021-08-04T05:04:59.786Z"
 	}
 }

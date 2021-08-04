@@ -108,8 +108,8 @@
 		"height": 662
 	},
 	"Sources/Methods/AR.4dm": {
-		"left": 2492,
-		"top": 45,
+		"left": -801,
+		"top": 695,
 		"width": 665,
 		"height": 729
 	},
@@ -180,10 +180,10 @@
 		"height": 399
 	},
 	"Sources/Methods/make_request.4dm": {
-		"left": 2239,
-		"top": 63,
-		"width": 550,
-		"height": 531
+		"left": -1013,
+		"top": 714,
+		"width": 749,
+		"height": 690
 	},
 	"Sources/Methods/append_data.4dm": {
 		"left": 550,
@@ -222,8 +222,8 @@
 		"height": 448
 	},
 	"Sources/Methods/exec.4dm": {
-		"left": 2126,
-		"top": 75,
+		"left": -1332,
+		"top": 653,
 		"width": 683,
 		"height": 758
 	},
@@ -248,6 +248,36 @@
 	"Sources/Methods/append_data_with_size.4dm": {
 		"left": 2078,
 		"top": 96,
+		"width": 665,
+		"height": 729
+	},
+	"Sources/Methods/append_as_numeric.4dm": {
+		"left": -1209,
+		"top": 694,
+		"width": 683,
+		"height": 758
+	},
+	"Sources/Methods/append_as_text.4dm": {
+		"left": -1293,
+		"top": 903,
+		"width": 683,
+		"height": 758
+	},
+	"Sources/Methods/append_as_code128.4dm": {
+		"left": -1327,
+		"top": 996,
+		"width": 665,
+		"height": 729
+	},
+	"Sources/Methods/TEST_barcode.4dm": {
+		"left": -1100,
+		"top": 787,
+		"width": 858,
+		"height": 766
+	},
+	"Sources/Methods/TEST_bitmap.4dm": {
+		"left": -983,
+		"top": 1192,
 		"width": 665,
 		"height": 729
 	}

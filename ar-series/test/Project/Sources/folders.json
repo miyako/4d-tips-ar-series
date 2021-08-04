@@ -7,6 +7,9 @@
 	},
 	"functions": {
 		"methods": [
+			"append_as_code128",
+			"append_as_numeric",
+			"append_as_text",
 			"append_data",
 			"append_data_with_size",
 			"ascii_to_data",
@@ -24,6 +27,8 @@
 	"test": {
 		"methods": [
 			"TEST",
+			"TEST_barcode",
+			"TEST_bitmap",
 			"TEST_protocol",
 			"TEST_send"
 		]

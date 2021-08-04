@@ -1,7 +1,14 @@
 ﻿{
 	"methods": {
 		"AR": {
-			"timeStamp": "2021-08-03T18:19:18.001Z",
+			"timeStamp": "2021-08-04T05:08:19.255Z",
+			"attributes": {
+				"invisible": true,
+				"preemptive": "capable"
+			}
+		},
+		"append_as_text": {
+			"timeStamp": "2021-08-04T05:15:32.181Z",
 			"attributes": {
 				"invisible": true,
 				"preemptive": "capable"
@@ -75,14 +82,27 @@
 				"preemptive": "capable"
 			}
 		},
+		"append_as_numeric": {
+			"timeStamp": "2021-08-04T05:15:42.007Z",
+			"attributes": {
+				"invisible": true,
+				"preemptive": "capable"
+			}
+		},
 		"make_request": {
-			"timeStamp": "2021-08-03T18:25:33.840Z",
+			"timeStamp": "2021-08-04T05:15:02.629Z",
+			"attributes": {
+				"invisible": true
+			}
+		},
+		"TEST_barcode": {
+			"timeStamp": "2021-08-04T03:31:54.914Z",
 			"attributes": {
 				"invisible": true
 			}
 		},
 		"exec": {
-			"timeStamp": "2021-08-03T18:47:41.333Z",
+			"timeStamp": "2021-08-04T05:09:21.786Z",
 			"attributes": {
 				"invisible": true
 			}
@@ -100,6 +120,13 @@
 				"invisible": true
 			}
 		},
+		"append_as_code128": {
+			"timeStamp": "2021-08-04T03:31:29.194Z",
+			"attributes": {
+				"invisible": true,
+				"preemptive": "capable"
+			}
+		},
 		"ascii_to_data": {
 			"timeStamp": "2021-05-12T08:32:04.439Z",
 			"attributes": {
@@ -107,8 +134,21 @@
 				"preemptive": "capable"
 			}
 		},
+		"TEST_bitmap": {
+			"timeStamp": "2021-08-04T05:04:59.786Z",
+			"attributes": {
+				"invisible": true
+			}
+		},
 		"get_xor": {
 			"timeStamp": "2021-08-03T04:32:32.512Z",
+			"attributes": {
+				"invisible": true,
+				"preemptive": "capable"
+			}
+		},
+		"bits_to_data": {
+			"timeStamp": "2021-05-12T13:49:32.114Z",
 			"attributes": {
 				"invisible": true,
 				"preemptive": "capable"
@@ -164,13 +204,6 @@
 		},
 		"(call_device)": {
 			"timeStamp": "2021-08-03T15:13:19.212Z",
-			"attributes": {
-				"invisible": true,
-				"preemptive": "capable"
-			}
-		},
-		"(bits_to_data)": {
-			"timeStamp": "2021-05-12T13:49:32.114Z",
 			"attributes": {
 				"invisible": true,
 				"preemptive": "capable"

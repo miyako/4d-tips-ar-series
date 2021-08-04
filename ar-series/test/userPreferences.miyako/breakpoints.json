@@ -1,1 +1,9 @@
-﻿[]
+﻿[
+	{
+		"line": 5,
+		"method": {
+			"type": 1,
+			"methodName": "TEST_bitmap"
+		}
+	}
+]
